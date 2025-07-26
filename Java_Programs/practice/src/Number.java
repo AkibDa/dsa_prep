@@ -85,9 +85,33 @@ public class Number {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number: ");
         int num = sc.nextInt();
-        prime_number(num);
-        armstrong_number(num);
-        palindrome_number(num);
-        krishnamurti_number(num);
+
+        System.out.println("Do u want to check weather a number is prime or not ?");
+        String choice = sc.next();
+
+        if (choice == "yes"){
+            prime_number(num);
+        }
+        else if (choice == "no"){
+            System.out.println("Do u want to check weather a number is armstrong or not ?");
+            choice = sc.next();
+            if (choice.equals("yes")){
+                armstrong_number(num);
+            }
+            else if (choice.equals("no")){
+                System.out.println("Do u want to check weather a number is palindrome or not ?");
+                choice = sc.next();
+                if (choice.equals("yes")){
+                    palindrome_number(num);
+                }
+                else if (choice.equals("no")){
+                    System.out.println("Do u want to check weather a number is krishnamurti or not ?");
+                    choice = sc.next();
+                    if (choice.equals("yes")){
+                        krishnamurti_number(num);
+                    }
+                }
+            }
+        }
     }
 }
