@@ -13,6 +13,26 @@ public class Number {
         return count;
     }
 
+    public static int factorial(int n){
+        return n==1?1:n*factorial(n-1);
+    }
+
+    public static void krishnamurti_number(int n){
+        int m=n;
+        int temp, sum=0;
+        while(n>0){
+            temp=n%10;
+            sum += factorial(temp);
+            n=n/10;
+        }
+        if(sum==m){
+            System.out.println(m+" is a krishnamurti number\n");
+        }
+        else{
+            System.out.println(m+" is not a krishnamurti number\n");
+        }
+    }
+
     public static void palindrome_number(int n){
         int m=n;
         int temp, sum=0;
@@ -68,5 +88,6 @@ public class Number {
         prime_number(num);
         armstrong_number(num);
         palindrome_number(num);
+        krishnamurti_number(num);
     }
 }
