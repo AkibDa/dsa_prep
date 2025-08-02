@@ -33,4 +33,15 @@ public class stack {
 
     }
 
+    public void peek() {
+
+        if (top == -1) {
+            System.out.println("No item present");
+        }
+        else {
+            System.out.println("Item: " + stack[top]);
+        }
+
+    }
+
 }
