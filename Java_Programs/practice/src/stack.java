@@ -20,4 +20,17 @@ public class stack {
         }
     }
 
+    public void pop() {
+
+        if (top == -1) {
+            System.out.println("Underflow");
+        }
+        else {
+            int popped = stack[top];
+            System.out.println("Popped: " + popped);
+            top--;
+        }
+
+    }
+
 }
