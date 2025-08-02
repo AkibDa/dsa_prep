@@ -12,33 +12,29 @@ public class stack {
         top = -1;
     }
 
-    public void push(int data) {
-
+    public void push(int number) {
         if (top == maxSize - 1) {
             System.out.println("Overflow");
+            return;
         }
         else {
             top++;
-            stack[top] = data;
-            System.out.println("Pushed: " + data);
+            stack[top] = number;
+            System.out.println("Pushed: " + number);
         }
-
-        return;
     }
 
     public void pop() {
 
         if (top == -1) {
             System.out.println("Underflow");
+            return;
         }
         else {
             int popped = stack[top];
             System.out.println("Popped: " + popped);
             top--;
         }
-
-        return;
-
     }
 
     public void peek() {
@@ -51,7 +47,6 @@ public class stack {
         }
 
         return;
-
     }
 
     public void display() {
@@ -74,15 +69,14 @@ public class stack {
         stack obj = new stack();
         Scanner sc = new Scanner(System.in);
         int choice;
-        int number;
         System.out.println("Enter your choice:\n");
-        System.out.println("1. Push\n2. Pop\n3. Peek\n4. Display\n5. Exit");
+        System.out.println("1. Push\n2. Pop\n3. Peek\n4. Display\n5. Exit\n");
         choice = sc.nextInt();
        while(true){
             switch (choice) {
                 case 1:
                     System.out.println("Enter the number to push\n");
-                    number = sc.nextInt();
+                    int number = sc.nextInt();
                     obj.push(number);
                     break;
                 case 2:
