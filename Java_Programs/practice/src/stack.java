@@ -13,6 +13,7 @@ public class stack {
     }
 
     public void push(int data) {
+
         if (top == maxSize - 1) {
             System.out.println("Overflow");
         }
@@ -21,6 +22,8 @@ public class stack {
             stack[top] = data;
             System.out.println("Pushed: " + data);
         }
+
+        return;
     }
 
     public void pop() {
@@ -34,6 +37,8 @@ public class stack {
             top--;
         }
 
+        return;
+
     }
 
     public void peek() {
@@ -45,9 +50,12 @@ public class stack {
             System.out.println("Item: " + stack[top]);
         }
 
+        return;
+
     }
 
     public void display() {
+
         if (top == -1) {
             System.out.println("No item present");
         }
@@ -57,9 +65,12 @@ public class stack {
             }
             System.out.println();
         }
+
+        return;
     }
 
     public static void main(String[] args) {
+
         stack obj = new stack();
         Scanner sc = new Scanner(System.in);
         int choice;
