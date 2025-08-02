@@ -16,8 +16,7 @@ public class stack {
         if (top == maxSize - 1) {
             System.out.println("Overflow");
             return;
-        }
-        else {
+        } else {
             top++;
             stack[top] = number;
             System.out.println("Pushed: " + number);
@@ -29,8 +28,7 @@ public class stack {
         if (top == -1) {
             System.out.println("Underflow");
             return;
-        }
-        else {
+        } else {
             int popped = stack[top];
             System.out.println("Popped: " + popped);
             top--;
@@ -41,8 +39,7 @@ public class stack {
 
         if (top == -1) {
             System.out.println("No item present");
-        }
-        else {
+        } else {
             System.out.println("Item: " + stack[top]);
         }
 
@@ -53,8 +50,7 @@ public class stack {
 
         if (top == -1) {
             System.out.println("No item present");
-        }
-        else {
+        } else {
             for (int i = top; i >= 0; i--) {
                 System.out.print(stack[i] + " ");
             }
@@ -69,13 +65,19 @@ public class stack {
         stack obj = new stack();
         Scanner sc = new Scanner(System.in);
         int choice;
-        System.out.println("Enter your choice:\n");
-        System.out.println("1. Push\n2. Pop\n3. Peek\n4. Display\n5. Exit\n");
-        choice = sc.nextInt();
-       while(true){
+
+        while (true) {
+            System.out.println("\nEnter your choice:");
+            System.out.println("1. Push");
+            System.out.println("2. Pop");
+            System.out.println("3. Peek");
+            System.out.println("4. Display");
+            System.out.println("5. Exit");
+            choice = sc.nextInt();
+
             switch (choice) {
                 case 1:
-                    System.out.println("Enter the number to push\n");
+                    System.out.println("Enter the number to push:");
                     int number = sc.nextInt();
                     obj.push(number);
                     break;
@@ -89,10 +91,11 @@ public class stack {
                     obj.display();
                     break;
                 case 5:
+                    System.out.println("Exiting program.");
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Invalid choice");
+                    System.out.println("Invalid choice. Please try again.");
             }
         }
     }
