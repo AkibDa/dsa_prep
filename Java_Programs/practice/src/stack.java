@@ -1,4 +1,7 @@
+import java.util.*;
+
 public class stack {
+
     int maxSize;
     int[] stack;
     int top;
@@ -56,6 +59,37 @@ public class stack {
         }
     }
 
-    public static void main(String[] args) {}
+    public static void main(String[] args) {
+        stack obj = new stack();
+        Scanner sc = new Scanner(System.in);
+        int choice;
+        int number;
+        System.out.println("Enter your choice:\n");
+        System.out.println("1. Push\n2. Pop\n3. Peek\n4. Display\n5. Exit");
+        choice = sc.nextInt();
+       while(true){
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter the number to push\n");
+                    number = sc.nextInt();
+                    obj.push(number);
+                    break;
+                case 2:
+                    obj.pop();
+                    break;
+                case 3:
+                    obj.peek();
+                    break;
+                case 4:
+                    obj.display();
+                    break;
+                case 5:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid choice");
+            }
+        }
+    }
 
 }
