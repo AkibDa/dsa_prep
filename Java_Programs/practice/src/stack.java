@@ -44,4 +44,18 @@ public class stack {
 
     }
 
+    public void display() {
+        if (top == -1) {
+            System.out.println("No item present");
+        }
+        else {
+            for (int i = top; i >= 0; i--) {
+                System.out.print(stack[i] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {}
+
 }
