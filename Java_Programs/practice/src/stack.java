@@ -15,7 +15,6 @@ public class stack {
     public void push(int number) {
         if (top == maxSize - 1) {
             System.out.println("Overflow");
-            return;
         } else {
             top++;
             stack[top] = number;
@@ -27,7 +26,6 @@ public class stack {
 
         if (top == -1) {
             System.out.println("Underflow");
-            return;
         } else {
             int popped = stack[top];
             System.out.println("Popped: " + popped);
@@ -42,8 +40,6 @@ public class stack {
         } else {
             System.out.println("Item: " + stack[top]);
         }
-
-        return;
     }
 
     public void display() {
@@ -56,8 +52,6 @@ public class stack {
             }
             System.out.println();
         }
-
-        return;
     }
 
     public static void main(String[] args) {
