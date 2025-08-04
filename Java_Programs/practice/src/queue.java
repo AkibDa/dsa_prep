@@ -49,8 +49,6 @@ public class queue {
     public static void  main(String[] args) {
         queue obj = new queue();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the size of the queue:\n");
-        int size = sc.nextInt();
         int choice;
 
         while (true) {
@@ -58,12 +56,12 @@ public class queue {
             System.out.println("1. Enqueue");
             System.out.println("2. Dequeue");
             System.out.println("3. Display");
-            System.out.println("4. Exit");
+            System.out.println("4. Exit\n");
             choice = sc.nextInt();
 
             switch (choice) {
                 case 1:
-                    System.out.println("Enter the number to push:");
+                    System.out.println("Enter the number to insert:\n");
                     int number = sc.nextInt();
                     obj.enqueue(number);
                     break;
