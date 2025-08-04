@@ -24,6 +24,22 @@ public class queue {
         }
     }
 
+    public void dequeue() {
+        if (front == -1) {
+            System.out.println("Queue is empty. Please try again.");
+        }
+        else {
+            int item = queue[front];
+            if (front == rear) {
+                front = rear = -1;
+            }
+            else  {
+                front = front + 1;
+            }
+            System.out.println("Dequeued item: " + item);
+        }
+    }
+
     public static void  main(String[] args) {
         queue obj = new queue();
         Scanner sc = new Scanner(System.in);
