@@ -13,7 +13,7 @@ public class queue {
     }
 
     public void display() {
-        for (int i = front; i != rear; i++) {
+        for (int i = front; i != rear; i =  (i + 1) % MAX_SIZE) {
             System.out.print(queue[i] + " ");
         }
     }
@@ -25,7 +25,7 @@ public class queue {
             if (front == -1) {
                 front++;
             }
-            rear++;
+            rear =  (rear + 1) % MAX_SIZE;
             queue[rear] = item;
         }
     }
@@ -40,7 +40,7 @@ public class queue {
                 front = rear = -1;
             }
             else  {
-                front = front + 1;
+                front = (front + 1) % MAX_SIZE;
             }
             System.out.println("Dequeued item: " + item);
         }
