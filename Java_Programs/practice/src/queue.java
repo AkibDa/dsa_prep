@@ -12,6 +12,18 @@ public class queue {
         front = rear = -1;
     }
 
+    public void enqueue(int item) {
+        if (rear == MAX_SIZE - 1) {
+            System.out.println("Queue is full. Please try again.");
+        }  else {
+            if (front == -1) {
+                front++;
+            }
+            rear++;
+            queue[rear] = item;
+        }
+    }
+
     public static void  main(String[] args) {
         queue obj = new queue();
         Scanner sc = new Scanner(System.in);
