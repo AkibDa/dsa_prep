@@ -12,6 +12,12 @@ public class queue {
         front = rear = -1;
     }
 
+    public void display() {
+        for (int i = front; i != rear; i++) {
+            System.out.print(queue[i] + " ");
+        }
+    }
+
     public void enqueue(int item) {
         if (rear == MAX_SIZE - 1) {
             System.out.println("Queue is full. Please try again.");
