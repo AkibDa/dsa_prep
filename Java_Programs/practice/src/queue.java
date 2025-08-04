@@ -2,66 +2,88 @@ import java.util.Scanner;
 
 public class queue {
 
-    int MAX_SIZE;
-    int[] queue;
+    int MAX_SIZE = 10;
+    int[] queueArray;
     int front, rear;
 
     public queue() {
-        MAX_SIZE = 10;
-        queue = new int[MAX_SIZE];
-        front = rear = -1;
+        queueArray = new int[MAX_SIZE];
+        front = -1;
+        rear = -1;
     }
 
-    public void display() {
-        for (int i = front; i != rear; i =  (i + 1) % MAX_SIZE) {
-            System.out.print(queue[i] + " ");
-        }
+    public boolean isEmpty() {
+        return front == -1;
+    }
+
+    public boolean isFull() {
+        return rear == MAX_SIZE - 1;
     }
 
     public void enqueue(int item) {
-        if (rear == MAX_SIZE - 1) {
-            System.out.println("Queue is full. Please try again.");
-        }  else {
-            if (front == -1) {
-                front++;
-            }
-            rear =  (rear + 1) % MAX_SIZE;
-            queue[rear] = item;
+        if (isFull()) {
+            System.out.println("Queue is full. Cannot enqueue.");
+            return;
         }
+
+        if (isEmpty()) {
+            front = 0;
+        }
+
+        rear++;
+        queueArray[rear] = item;
+        System.out.println("Enqueued item: " + item);
     }
 
     public void dequeue() {
-        if (front == -1) {
-            System.out.println("Queue is empty. Please try again.");
+        if (isEmpty()) {
+            System.out.println("Queue is empty. Cannot dequeue.");
+            return;
         }
-        else {
-            int item = queue[front];
-            if (front == rear) {
-                front = rear = -1;
-            }
-            else  {
-                front = (front + 1) % MAX_SIZE;
-            }
-            System.out.println("Dequeued item: " + item);
+
+        int item = queueArray[front];
+        System.out.println("Dequeued item: " + item);
+
+        for (int i = front; i < rear; i++) {
+            queueArray[i] = queueArray[i + 1];
+        }
+
+        rear--;
+        if (rear == -1) {
+            front = -1;
         }
     }
 
-    public static void  main(String[] args) {
+    public void display() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty.");
+            return;
+        }
+
+        System.out.print("Elements in the queue are: ");
+        for (int i = front; i <= rear; i++) {
+            System.out.print(queueArray[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
         queue obj = new queue();
         Scanner sc = new Scanner(System.in);
         int choice;
 
         while (true) {
-            System.out.println("\nEnter your choice:");
+            System.out.println("\n--- Linear Queue Operations ---");
             System.out.println("1. Enqueue");
             System.out.println("2. Dequeue");
             System.out.println("3. Display");
             System.out.println("4. Exit\n");
+            System.out.print("Enter your choice: ");
             choice = sc.nextInt();
 
             switch (choice) {
                 case 1:
-                    System.out.println("Enter the number to insert:\n");
+                    System.out.print("Enter the number to insert: ");
                     int number = sc.nextInt();
                     obj.enqueue(number);
                     break;
@@ -73,6 +95,7 @@ public class queue {
                     break;
                 case 4:
                     System.out.println("Exiting program.");
+                    sc.close();
                     System.exit(0);
                     break;
                 default:
@@ -80,5 +103,4 @@ public class queue {
             }
         }
     }
-
 }
