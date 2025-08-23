@@ -161,6 +161,21 @@ public class Patterns {
         }
     }
 
+    public static void palindromic_pattern(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n-i; j++) {
+                System.out.print(" ");
+            }
+            for(int k = i; k >= 1; k--) {
+                System.out.print(k+" ");
+            }
+            for(int k = 2; k <= i; k++) {
+                System.out.print(k+" ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the number of rows of a rectangle: ");
@@ -193,6 +208,8 @@ public class Patterns {
         solid_rhombus(a);
         System.out.println();
         number_pyramid(a);
+        System.out.println();
+        palindromic_pattern(a);
         System.out.println();
     }
 }
