@@ -176,6 +176,27 @@ public class Patterns {
         }
     }
 
+    public static void diamond_pattern(int n) {
+        for(int i = 1; i <= n; i++) {
+            for(int k = 1; k <= n - i; k++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        for(int i = n; i >= 1; i--) {
+            for(int k = 1; k <= n - i; k++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the number of rows of a rectangle: ");
@@ -210,6 +231,8 @@ public class Patterns {
         number_pyramid(a);
         System.out.println();
         palindromic_pattern(a);
+        System.out.println();
+        diamond_pattern(a);
         System.out.println();
     }
 }
