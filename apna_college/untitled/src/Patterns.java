@@ -67,6 +67,15 @@ public class Patterns {
         }
     }
 
+    public static void half_pyramid_with_numbers(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j+" ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the number of rows of a rectangle: ");
@@ -85,6 +94,7 @@ public class Patterns {
         full_pyramid(a);
         System.out.println();
         inverted_half_pyramid_rotated_by_180_deg(a);
-
+        System.out.println();
+        half_pyramid_with_numbers(a);
     }
 }
