@@ -34,19 +34,29 @@ public class Patterns {
         }
     }
 
+    public static void inverted_half_pyramid(int n) {
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
         System.out.print("Enter the number of rows of a rectangle: ");
         int n = input.nextInt();
         System.out.print("Enter the number of columns of a rectangle: ");
         int m = input.nextInt();
         solid_rectangle(n,m);
+        System.out.println();
         hollow_rectangle(n,m);
-
         System.out.print("Enter the number of rows of a pyramid: ");
         int a = input.nextInt();
         half_pyramid(a);
+        System.out.println();
+        inverted_half_pyramid(a);
 
     }
 }
