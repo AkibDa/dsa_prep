@@ -91,6 +91,7 @@ import java.util.Scanner;
             System.out.println("The postfix expression is: ");
             obj.infixTOPostfix(infix, postfix);
             System.out.println(new String(postfix));
+            sc.close();
         }
 
     }

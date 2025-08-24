@@ -6,5 +6,6 @@ public class Main {
         String name = sc.nextLine();
 
         System.out.println(name+" Welcome to Java");
+        sc.close();
     }
 }

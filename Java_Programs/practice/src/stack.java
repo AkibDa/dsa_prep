@@ -86,6 +86,7 @@ public class stack {
                     break;
                 case 5:
                     System.out.println("Exiting program.");
+                    sc.close();
                     System.exit(0);
                     break;
                 default:
