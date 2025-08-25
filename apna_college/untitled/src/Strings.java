@@ -25,6 +25,26 @@ public class Strings {
     String substr = str.substring(7);
     System.out.println("Substring: " + substr);
 
+    // String builder
+    StringBuilder sb = new StringBuilder("Hello");
+    System.out.println(sb);
+    System.out.println(sb.charAt(0));
+    sb.setCharAt(0, 'h');
+    System.out.println(sb);
+    sb.insert(0, 'n');
+    System.out.println(sb);
+    sb.deleteCharAt(0);
+    System.out.println(sb);
+
+    StringBuilder sb2 = new StringBuilder("h");
+    sb2.append("e");
+    sb2.append("l");
+    sb2.append("l");
+    sb2.append("o");
+    System.out.println(sb2);
+    sb2.reverse();
+    System.out.println(sb2);
+
   }
 
 }
