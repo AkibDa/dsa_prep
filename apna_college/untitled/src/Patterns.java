@@ -197,6 +197,7 @@ public class Patterns {
         }
     }
 
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the number of rows of a rectangle: ");
@@ -234,5 +235,6 @@ public class Patterns {
         System.out.println();
         diamond_pattern(a);
         System.out.println();
+        input.close();
     }
 }
