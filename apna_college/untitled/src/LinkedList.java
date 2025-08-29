@@ -12,8 +12,6 @@ public class LinkedList {
 
   }
 
-  //add - first, last, at index
-
   public void addFirst(String data) {
     Node newNode = new Node(data);
     if(head == null) {
@@ -50,12 +48,39 @@ public class LinkedList {
     System.out.println("null");
   }
 
+  public void deleteFirst() {
+    if(head == null) {
+      System.out.println("List is empty");
+      return;
+    }
+    head = head.next;
+  }
+  public void deleteLast() {
+    if(head == null) {
+      System.out.println("List is empty");
+      return;
+    }
+    if(head.next == null) {
+      head = null;
+      return;
+    }
+    Node current = head;
+    while(current.next.next != null) {
+      current = current.next;
+    }
+    current.next = null;
+  }
+
   public static void main(String[] args) {
     LinkedList list = new LinkedList();
     list.addFirst("A");
     list.addFirst("B");
     list.printList();
     list.addLast("C");
+    list.printList();
+    list.deleteFirst();
+    list.printList();
+    list.deleteLast();
     list.printList();
   }
 
