@@ -1,3 +1,4 @@
+
 public class LinkedList {
   // Node head;
   // private int size;
@@ -84,7 +85,17 @@ public class LinkedList {
   // }
 
   public static void main(String[] args) {
-
+    java.util.LinkedList<String> list = new java.util.LinkedList<>();
+    list.addFirst("A");
+    list.addFirst("B");
+    list.addLast("C");
+    list.addLast("D");
+    System.out.println(list);
+    list.removeFirst();
+    System.out.println(list);
+    list.removeLast();
+    System.out.println(list);
+    System.out.println(list.size());
   }
 
 }
