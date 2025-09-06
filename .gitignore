@@ -1,10 +1,5 @@
 .DS_Store
-.idea
+*.idea
 *.iml
-Java_Programs/.idea
-Java_Programs/practice/src/.idea/
-Java_Programs/practice/src/out/
-Java_Programs/out
-Leetcode/.idea
-apna_college/.idea
-apna_college/out
+*.class
+*.out

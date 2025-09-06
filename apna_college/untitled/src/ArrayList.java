@@ -1,4 +1,3 @@
-import java.util.Collection;
 
 public class ArrayList {
   public static void main(String[] args) {
@@ -16,7 +15,7 @@ public class ArrayList {
     list.clear();
     System.out.println("Is empty: " + list.isEmpty());
     System.out.println("Final list: " + list);
-    Collection.sort(list);
-    System.out.println("Sorted list: " + list);
+    // Collection.sort(list);
+    // System.out.println("Sorted list: " + list);
   }
 }
