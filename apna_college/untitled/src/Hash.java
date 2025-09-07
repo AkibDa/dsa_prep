@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class Hash {
   
@@ -30,6 +31,12 @@ public class Hash {
 
     //Print the HashSet
     System.out.println("HashSet: " + set);
+
+    //Iterate over the HashSet
+    Iterator it = set.iterator();
+    while(it.hasNext()) {
+      System.out.println(it.next());
+    }
   }
 
 }
