@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class Hash {
+public class Hashset {
   
   public static void main(String[] args) {
     //Creating a HashSet
