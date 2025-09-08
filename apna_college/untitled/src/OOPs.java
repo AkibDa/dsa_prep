@@ -15,6 +15,21 @@ class Pen{
   }
 }
 
+class Student {
+  String name;
+  int age;
+
+  public void study(){
+    System.out.println(this.name + " is studying");
+  }
+
+  public void printAge(){
+    System.out.println(this.age);
+  }
+  public void printName(){
+    System.out.println(this.name);
+  }
+}
 
 public class OOPs {
   public static void main(String[] args) {
@@ -33,5 +48,21 @@ public class OOPs {
   pen2.write();
   pen2.printColor();
   pen2.printType();
+
+  Student student1 = new Student();
+  student1.name = "Alice";
+  student1.age = 20;
+
+  student1.study();
+  student1.printName();
+  student1.printAge();
+
+  Student student2 = new Student();
+  student2.name = "Bob";
+  student2.age = 22;
+  
+  student2.study();
+  student2.printName();
+  student2.printAge();
   }
 }
