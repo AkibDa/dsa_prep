@@ -4,6 +4,22 @@ public class searchInStrings {
         char target = 'u';
         System.out.println(search(name, target));
         System.out.println(search2(name, target));
+        searchInRange(name, target, 1, 3);
+
+    }
+
+    static void searchInRange(String str, char target, int start, int end){
+      if(str.length() == 0){
+        System.out.println("String is empty");
+        return;
+      }
+      for(int i=start; i<=end; i++){
+        if(str.charAt(i) == target){
+          System.out.println("Found " + target + " at index " + i);
+          return;
+        }
+      }
+      System.out.println(target + " not found in the given range");
 
     }
 
