@@ -51,7 +51,25 @@ public class sortedMatrix {
       }
     }
 
-    return new int[]{-1, -1};
+    if(matrix[rStart][cMid] == target){
+      return new int[]{rStart, cMid};
+    }
+    if(matrix[rStart + 1][cMid] == target){
+      return new int[]{rStart + 1, cMid};
+    }
+
+    if(target <= matrix[rStart][cMid - 1]){
+      return binarySearch(matrix[rStart], rStart, 0, cMid - 1, target);
+    }
+    if(target >= matrix[rStart][cMid + 1] && target <= matrix[rStart][cols - 1]){
+      return binarySearch(matrix[rStart], rStart, cMid + 1, cols - 1, target);
+    }
+    if(target <= matrix[rStart + 1][cMid - 1]){
+      return binarySearch(matrix[rStart + 1], rStart + 1, 0, cMid - 1, target);
+    } else {
+      return binarySearch(matrix[rStart + 1], rStart + 1, cMid + 1, cols - 1, target);
+    }
+
   }
 
 }
