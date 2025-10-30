@@ -92,7 +92,7 @@ public class sorting {
     public static void cyclicSort(int[] arr) {
         int i = 0;
         while (i < arr.length) {
-            int correctIndex = arr[i];
+            int correctIndex = arr[i] - 1;
             if (arr[i] < arr.length && arr[i] != arr[correctIndex]) {
                 // Swap arr[i] with arr[correctIndex]
                 int temp = arr[i];
