@@ -4,7 +4,7 @@ public class FindDupNum {
       int next = nums[nums[0]];
       nums[nums[0]] = nums[0];
       nums[0] = next;
-  }
+    }
   return nums[0];
   }
 
