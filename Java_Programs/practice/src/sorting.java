@@ -83,6 +83,27 @@ public class sorting {
         }
     }
 
+    // --- Cyclic Sort ---
+    /**
+     * Implements the Cyclic Sort algorithm.
+     * Sorts an array containing n distinct numbers in the range 0 to n-1.
+     * @param arr The array to be sorted.
+     */
+    public static void cyclicSort(int[] arr) {
+        int i = 0;
+        while (i < arr.length) {
+            int correctIndex = arr[i];
+            if (arr[i] < arr.length && arr[i] != arr[correctIndex]) {
+                // Swap arr[i] with arr[correctIndex]
+                int temp = arr[i];
+                arr[i] = arr[correctIndex];
+                arr[correctIndex] = temp;
+            } else {
+                i++;
+            }
+        }
+    }
+
     // --- Merge Sort ---
     /**
      * Merges two subarrays of arr[].
@@ -240,6 +261,15 @@ public class sorting {
         insertionSort(arr3);
         System.out.println("Sorted array (Insertion Sort):");
         printArray(arr3);
+        System.out.println("------------------------------------");
+
+        // Test Cyclic Sort
+        int[] arrCyclic = {3, 5, 2, 1, 4};
+        System.out.println("Original array (Cyclic Sort):");
+        printArray(arrCyclic);
+        cyclicSort(arrCyclic);
+        System.out.println("Sorted array (Cyclic Sort):");
+        printArray(arrCyclic);
         System.out.println("------------------------------------");
 
         // Test Merge Sort
