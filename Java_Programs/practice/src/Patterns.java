@@ -7,6 +7,8 @@ public class Patterns {
     pattern3(5);
     System.out.println();
     pattern4(5);
+    System.out.println();
+    pattern5(5);
   }
 
   static void pattern1(int n){
@@ -82,4 +84,25 @@ public class Patterns {
   //    * * *
   //     * *
   //      *
+
+  static void pattern5(int n){
+    for(int i=1;i<=n;i++){
+      for(int j=0;j<n-i;j++){
+        System.out.print("  ");
+      }
+      for(int j=i;j>=1;j--){
+        System.out.print(j+" ");
+      }
+      for(int j=2;j<=i;j++){
+        System.out.print(j+" ");
+      }
+      System.out.println();
+    }
+  }
+  // Output:
+  //         1
+  //       2 1 2
+  //     3 2 1 2 3
+  //   4 3 2 1 2 3 4
+  // 5 4 3 2 1 2 3 4 5
 }
