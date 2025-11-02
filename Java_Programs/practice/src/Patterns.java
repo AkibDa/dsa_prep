@@ -9,6 +9,10 @@ public class Patterns {
     pattern4(5);
     System.out.println();
     pattern5(5);
+    System.out.println();
+    pattern6(5);
+    System.out.println();
+    pattern7(4);
   }
 
   static void pattern1(int n){
@@ -132,4 +136,23 @@ public class Patterns {
   //     3 2 1 2 3
   //       2 1 2
   //         1
+
+  static void pattern7(int n){
+    for(int i=1;i<=2*n;i++){
+      for(int j=1;j<=2*n;j++){
+        int atEveryIndex = Math.min(Math.min(i,j),Math.min(2*n-i,2*n-j));
+        System.out.print(atEveryIndex+" ");
+      }
+      System.out.println();
+    }
+  }
+  // Output for n=4:
+  // 1 1 1 1 1 1 1 1
+  // 1 2 2 2 2 2 2 1
+  // 1 2 3 3 3 3 2 1
+  // 1 2 3 4 4 3 2 1
+  // 1 2 3 4 4 3 2 1
+  // 1 2 3 3 3 3 2 1
+  // 1 2 2 2 2 2 2 1
+  // 1 1 1 1 1 1 1 1
 }
