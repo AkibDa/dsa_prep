@@ -5,6 +5,8 @@ public class Patterns {
     pattern2(5);
     System.out.println();
     pattern3(5);
+    System.out.println();
+    pattern4(5);
   }
 
   static void pattern1(int n){
@@ -56,4 +58,28 @@ public class Patterns {
   // * * *
   // * *
   // *
+
+  static void pattern4(int n){
+    for(int i=0;i<2*n;i++){
+      int totalColsInRow = i>n ? 2*n-i : i;
+      int noOfSpaces = n - totalColsInRow;
+      for(int s=0;s<noOfSpaces;s++){
+        System.out.print(" ");
+      }
+      for(int j=0;j<totalColsInRow;j++){
+        System.out.print("* ");
+      }
+      System.out.println();
+    }
+  }
+  // Output:
+  //      *
+  //     * *
+  //    * * *
+  //   * * * *
+  //  * * * * *
+  //   * * * *
+  //    * * *
+  //     * *
+  //      *
 }
