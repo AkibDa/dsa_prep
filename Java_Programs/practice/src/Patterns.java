@@ -105,4 +105,31 @@ public class Patterns {
   //     3 2 1 2 3
   //   4 3 2 1 2 3 4
   // 5 4 3 2 1 2 3 4 5
+
+  static void pattern6(int n){
+    for(int i=1;i<=2*n;i++){
+      int totalColsInRow = i>n ? 2*n-i : i;
+      int noOfSpaces = n - totalColsInRow;
+      for(int s=0;s<noOfSpaces;s++){
+        System.out.print("  ");
+      }
+      for(int j=totalColsInRow;j>=1;j--){
+        System.out.print(j+" ");
+      }
+      for(int j=2;j<=totalColsInRow;j++){
+        System.out.print(j+" ");
+      }
+      System.out.println();
+    }
+  }
+  // Output:
+  //         1
+  //       2 1 2
+  //     3 2 1 2 3
+  //   4 3 2 1 2 3 4
+  // 5 4 3 2 1 2 3 4 5
+  //   4 3 2 1 2 3 4
+  //     3 2 1 2 3
+  //       2 1 2
+  //         1
 }
