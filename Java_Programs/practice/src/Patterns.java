@@ -1,8 +1,10 @@
 public class Patterns {
   public static void main(String[] args) {
-    pattern1(4);
+    pattern1(5);
     System.out.println();
     pattern2(5);
+    System.out.println();
+    pattern3(5);
   }
 
   static void pattern1(int n){
@@ -18,16 +20,37 @@ public class Patterns {
   // * *
   // * * *
   // * * * *
-  
+  // * * * * *
+
   static void pattern2(int n){
     for(int i=1;i<=n;i++){
-      for(int j=n;j>=i;j--){
+      for(int j=1;j<=n-i+1;j++){
         System.out.print("* ");
       }
       System.out.println();
     }
   }
   // Output:
+  // * * * * *
+  // * * * *
+  // * * *
+  // * *
+  // *
+
+  static void pattern3(int n){
+    for(int i=0;i<=2*n;i++){
+      int totalColsInRow = i>n ? 2*n-i : i;
+      for(int j=0;j<totalColsInRow;j++){
+        System.out.print("* ");
+      }
+      System.out.println();
+    }
+  }
+  // Output:
+  // *
+  // * *
+  // * * *
+  // * * * *
   // * * * * *
   // * * * *
   // * * *
