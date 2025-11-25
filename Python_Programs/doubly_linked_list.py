@@ -14,7 +14,7 @@ class DoublyLinkedList:
       self.head.prev = node
     self.head = node
     
-  def print(self):
+  def print_forward(self):
     if self.head is None:
       print("Doubly linked list is empty")
       return
@@ -22,8 +22,23 @@ class DoublyLinkedList:
     itr = self.head
     llstr = ''
     while itr:
-      llstr += str(itr.data) + ' <=> '
+      llstr += str(itr.data) + ' => '
       itr = itr.next
+    print(llstr)
+    
+  def print_backward(self):
+    if self.head is None:
+      print("Doubly linked list is empty")
+      return
+    
+    itr = self.head
+    while itr.next:
+      itr = itr.next
+      
+    llstr = ''
+    while itr:
+      llstr += str(itr.data) + ' <= '
+      itr = itr.prev
     print(llstr)
     
   def delete_at_beginning(self):
@@ -67,7 +82,10 @@ if __name__ == "__main__":
   dll.insert_at_end(20)
   dll.insert_at_beginning(5)
   dll.print()  # Output: 5 <=> 10 <=> 20 <=> 
+  dll.print_backward()  # Output: 20 <=> 10 <=> 5 <=
   dll.delete_at_beginning()
   dll.print()  # Output: 10 <=> 20 <=> 
+  dll.print_backward()  # Output: 20 <=> 10 <=
   dll.delete_at_end()
   dll.print()  # Output: 10 <=>
+  dll.print_backward()  # Output: 10 <=
