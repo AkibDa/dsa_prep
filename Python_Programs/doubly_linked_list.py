@@ -81,11 +81,11 @@ if __name__ == "__main__":
   dll.insert_at_end(10)
   dll.insert_at_end(20)
   dll.insert_at_beginning(5)
-  dll.print()  # Output: 5 <=> 10 <=> 20 <=> 
-  dll.print_backward()  # Output: 20 <=> 10 <=> 5 <=
+  dll.print_forward()  # Output: 5 => 10 => 20 => 
+  dll.print_backward()  # Output: 20 => 10 => 5 <=
   dll.delete_at_beginning()
-  dll.print()  # Output: 10 <=> 20 <=> 
-  dll.print_backward()  # Output: 20 <=> 10 <=
+  dll.print_forward()  # Output: 10 <= 20 <= 
+  dll.print_backward()  # Output: 20 <= 10 <=
   dll.delete_at_end()
-  dll.print()  # Output: 10 <=>
+  dll.print_forward()  # Output: 10 =>
   dll.print_backward()  # Output: 10 <=
