@@ -26,6 +26,17 @@ class Stack:
   def display(self):
     return self.items
   
+def reverse_string(s):
+  stack = Stack()
+  for char in s:
+    stack.push(char)
+  
+  reversed_str = ""
+  while not stack.is_empty():
+    reversed_str += stack.pop()
+  
+  return reversed_str
+  
 if __name__ == "__main__":
   s = Stack()
   s.push(10)
@@ -36,3 +47,4 @@ if __name__ == "__main__":
   print("Stack size:", s.size())
   print("Popped item:", s.pop())
   print("Stack items after pop:", s.display())
+  print("Reversed string of 'hello':", reverse_string("hello"))
