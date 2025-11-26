@@ -36,6 +36,21 @@ def reverse_string(s):
     reversed_str += stack.pop()
   
   return reversed_str
+
+def is_balanced(expression):
+  stack = Stack()
+  opening = "({["
+  closing = ")}]"
+  match = {')': '(', '}': '{', ']': '['}
+  
+  for char in expression:
+    if char in opening:
+      stack.push(char)
+    elif char in closing:
+      if stack.is_empty() or stack.pop() != match[char]:
+        return False
+  
+  return stack.is_empty()
   
 if __name__ == "__main__":
   s = Stack()
@@ -48,3 +63,5 @@ if __name__ == "__main__":
   print("Popped item:", s.pop())
   print("Stack items after pop:", s.display())
   print("Reversed string of 'hello':", reverse_string("hello"))
+  print("Is '(a+b)*[c/d]' balanced?", is_balanced("(a+b)*[c/d]"))
+  print("Is '{[a+b]*(c/d)' balanced?", is_balanced("{[a+b]*(c/d)"))
