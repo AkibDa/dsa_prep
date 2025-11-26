@@ -28,3 +28,17 @@ with open("nyc_weather.csv", "r") as f:
 print(weather_dict)
 print(weather_dict['Jan 9'])
 print(weather_dict['Jan 4'])
+
+count_dict = {}
+
+with open("poem.txt", "r") as f:
+  for line in f:
+    words = line.split(" ")
+    for word in words:
+      word = word.lower().strip().replace(".", "").replace(",", "").replace(";", "").replace(":", "").replace("\"", "").replace("'", "")
+      if word in count_dict:
+        count_dict[word] += 1
+      else:
+        count_dict[word] = 1
+    
+print(count_dict)
