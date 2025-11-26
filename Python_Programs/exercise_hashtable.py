@@ -12,3 +12,19 @@ with open("nyc_weather.csv", "r") as f:
       
 print(arr)
 print("Max temperature:", max(arr[0:10]))
+
+weather_dict = {}
+
+with open("nyc_weather.csv", "r") as f:
+  for line in f:
+    tokens = line.split(",")
+    date = tokens[0]
+    try:
+      temperature = int(tokens[1])
+      weather_dict[date] = temperature
+    except:
+      print("Invalid temperature. Skipping...")
+      
+print(weather_dict)
+print(weather_dict['Jan 9'])
+print(weather_dict['Jan 4'])
