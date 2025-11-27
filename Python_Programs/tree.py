@@ -8,6 +8,21 @@ class TreeNode:
     child.parent = self
     self.children.append(child)
     
+  def get_level(self):
+    level = 0
+    p = self.parent
+    while p:
+      level += 1
+      p = p.parent
+    return level
+    
+  def print_tree(self):
+    indent = " " * self.get_level() * 2
+    print(f"{indent}|__ {self.data}")
+    if self.children:
+      for child in self.children:
+        child.print_tree()
+    
 def build_product_tree():
   root = TreeNode("Electronics")
   
@@ -33,8 +48,4 @@ def build_product_tree():
     
 if __name__ == "__main__":
   product_tree = build_product_tree()
-  print("Root Node:", product_tree.data)
-  for child in product_tree.children:
-    print(" Child Node:", child.data)
-    for grandchild in child.children:
-      print("  Grandchild Node:", grandchild.data)
+  product_tree.print_tree()
