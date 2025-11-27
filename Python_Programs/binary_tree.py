@@ -73,6 +73,28 @@ class BinarySearchTreeNode:
       return self.data
     return self.left.find_min()
   
+  def delete_node(self, data):
+    if data < self.data:
+      if self.left:
+        self.left = self.left.delete_node(data)
+    elif data > self.data:
+      if self.right:
+        self.right = self.right.delete_node(data)
+    else:
+      if self.left is None and self.right is None:
+        return None
+      elif self.left is None:
+        return self.right
+      elif self.right is None:
+        return self.left
+      else:
+        min_larger_node = self.right
+        while min_larger_node.left:
+          min_larger_node = min_larger_node.left
+        self.data = min_larger_node.data
+        self.right = self.right.delete_node(min_larger_node.data)
+    return self
+  
 def build_tree(elements):
   root = BinarySearchTreeNode(elements[0])
   
