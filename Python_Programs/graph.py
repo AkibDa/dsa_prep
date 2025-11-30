@@ -9,18 +9,38 @@ class Graph:
         self.graph_dict[start] = [end]
     print("Graph dictionary: ", self.graph_dict)
     
-  def get_paths(self, start, end, path=[]):
+  def get_paths(self, start, end, path=None):
+    if path is None:
+      path = []
     path = path + [start]
-    paths = []
     if start == end:
-      return [[start]]
+      return [path]
     if start not in self.graph_dict:
       return []
+    paths = []
     for node in self.graph_dict[start]:
-      sub_paths = self.get_paths(node, end)
-      for path in sub_paths:
-        paths.append([start] + path)
+      if node not in path:
+        sub_paths = self.get_paths(node, end)
+        for path in sub_paths:
+          paths.append([start] + path)
     return paths
+  
+  def get_shortest_path(self, start, end, path=None):
+    if path is None:
+      path = []
+    path = path + [start]
+    if start == end:
+      return path
+    if start not in self.graph_dict:
+      return None
+    shortest = None
+    for node in self.graph_dict[start]:
+      if node not in path:
+        sp = self.get_shortest_path(node, end, path)
+        if sp:
+          if shortest is None or len(sp) < len(shortest):
+            shortest = sp
+    return  shortest
     
     
 if __name__ == "__main__":
@@ -46,3 +66,15 @@ if __name__ == "__main__":
   all_paths = route_graph.get_paths("Paris", "Dubai")
   for path in all_paths:
     print(" -> ".join(path))
+  shortest_path = route_graph.get_shortest_path("Mumbai", "New York")
+  print("Shortest path from Mumbai to New York:")
+  if shortest_path:
+    print(" -> ".join(shortest_path))
+  shortest_path = route_graph.get_shortest_path("Mumbai", "Toronto")
+  print("Shortest path from Mumbai to Toronto:")
+  if shortest_path:
+    print(" -> ".join(shortest_path))
+  shortest_path = route_graph.get_shortest_path("Paris", "Dubai")
+  print("Shortest path from Paris to Dubai:")
+  if shortest_path:
+    print(" -> ".join(shortest_path))
