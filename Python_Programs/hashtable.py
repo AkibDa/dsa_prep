@@ -25,6 +25,7 @@ class HashTable:
     for element in self.arr[h]:
       if element[0] == key:
         return element[1]
+    return None
     
   
   def __delitem__(self, key):
