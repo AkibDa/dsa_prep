@@ -1,12 +1,10 @@
 class Solution:
   def finalValueAfterOperations(self, operations: list[str]) -> int:
-    inr = "++"
-    decr = "--"
     value = 0
     for operation in operations:
-      if inr in operation:
+      if "+" in operation:
         value += 1
-      elif decr in operation:
+      else:
         value -= 1
     return value
 
