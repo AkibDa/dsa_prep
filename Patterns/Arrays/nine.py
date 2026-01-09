@@ -2,7 +2,7 @@
 
 # Pattern: Reversal Algorithm.
 
-# Why: Rotating k steps is equivalent to reversing the whole array, then reversing the first $k$ elements, then the rest.
+# Why: Rotating k steps is equivalent to reversing the whole array, then reversing the first k elements, then the rest.
 
 def rotate(nums, k):
   k = k % len(nums)
